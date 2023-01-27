@@ -1,13 +1,12 @@
 from django.urls import path
 from webapp.views import IndexViews, ArticleCreateView, ArticleView, MyRedirectView, ArticleUpdateView, \
-    ArticleDeleteView, ArticleCommentCreateView, CommentUpdateView, CommentDeleteView
-from django.views.generic import RedirectView
+    ArticleDeleteView, ArticleCommentCreateView, CommentUpdateView, CommentDeleteView, TestView
 
 app_name = 'webapp'
 
 urlpatterns = [
-    path('', RedirectView.as_view(pattern_name='webapp:index')),
-    path('articles/', IndexViews.as_view(), name='index'),
+    path('', IndexViews.as_view(), name='index'),
+    path('test/', TestView.as_view(), name='test'),
     path('article/<int:pk>/', ArticleView.as_view(), name='article_view'),
     path('article/<int:pk>/comment/add/', ArticleCommentCreateView.as_view(), name='article_comment_add'),
     path('articles/add/', ArticleCreateView.as_view(), name='article_add'),

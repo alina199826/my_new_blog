@@ -1,13 +1,21 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from django.core.exceptions import PermissionDenied
 from django.db.models import Q
 from django.urls import reverse_lazy
 from django.utils.http import urlencode
-from django.shortcuts import render, get_object_or_404, redirect, reverse
 from webapp.models import Article
 from webapp.forms import ArticleForm, SimpleSearchForm, ArticleDeleteForm
+from django.http import JsonResponse
 
-from django.views.generic import RedirectView, ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import RedirectView, ListView, DetailView, CreateView, UpdateView, DeleteView, View
+
+
+class TestView(View):
+    def get(self, request, *args, **kwargs):
+        # response = JsonResponse({'test': 2, 'test2': [1,2,3]})
+        response = JsonResponse({'error': 'qweqweqweqwwe'})
+        response.status_code =400
+
+        return response
 
 
 class IndexViews(ListView):

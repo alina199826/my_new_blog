@@ -261,28 +261,6 @@
   }
 },
 {
-  "model": "webapp.comment",
-  "pk": 3,
-  "fields": {
-    "text": "qwewqeqweqweqweqweqwe",
-    "article": 34,
-    "author": 10,
-    "created_at": "2022-12-20T14:17:47.588Z",
-    "updated_at": "2022-12-20T14:17:47.588Z"
-  }
-},
-{
-  "model": "webapp.comment",
-  "pk": 5,
-  "fields": {
-    "text": "user 3 qwreqweqw",
-    "article": 34,
-    "author": 11,
-    "created_at": "2022-12-20T14:37:11.577Z",
-    "updated_at": "2022-12-20T14:37:17.511Z"
-  }
-},
-{
   "model": "accounts.profile",
   "pk": 1,
   "fields": {
