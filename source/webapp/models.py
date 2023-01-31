@@ -3,8 +3,7 @@ from django.urls import reverse
 from django.conf import settings
 from django.contrib.auth import get_user_model
 
-from webapp.validate import at_least_8, MinLengthValidator
-from django.core.validators import MaxLengthValidator
+from webapp.validate import at_least_8
 
 
 class Tag(models.Model):

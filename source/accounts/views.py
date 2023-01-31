@@ -82,24 +82,6 @@ class UserChangeView(LoginRequiredMixin, UpdateView):
         return reverse('accounts:detail', kwargs={'pk': self.get_object().pk})
 
 
-# class UserPasswordChangeView(UpdateView):
-#     model = get_user_model()
-#     template_name = 'user_password_change.html'
-#     context_object_name = 'oser_obj'
-#     form_class = PasswordChangeForm
-#
-#     def get_object(self, queryset=None):
-#         return self.request.user
-#
-#     def form_valid(self, form):
-#         user = form.save()
-#         update_session_auth_hash(self.request, user)
-#         return redirect(self.get_success_url())
-#
-#
-#
-#     def get_success_url(self):
-#         return reverse('accounts:detail', kwargs={'pk': self.get_object().pk})
 class UserPasswordChangeView(PasswordChangeView):
     template_name = 'user_password_change.html'
 

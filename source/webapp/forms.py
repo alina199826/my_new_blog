@@ -37,16 +37,6 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ['text']
 
-class ArticleDeleteForm(forms.ModelForm):
-    class Meta:
-        model = Article
-        fields = ['title']
-
-    def clean_title(self):
-        title = self.cleaned_data['title']
-        if self.instance.title != title:
-            raise ValidationError('Названия не совпадают')
-        return title
 
 class ArticleDeleteForm(forms.ModelForm):
     class Meta:
@@ -61,4 +51,5 @@ class ArticleDeleteForm(forms.ModelForm):
 
 
 class SimpleSearchForm(forms.Form):
-    search = forms.CharField(max_length=50, required=False, label='Найти', widget=widgets.TextInput(attrs={'class': "form-control w-25"}))
+    search = forms.CharField(max_length=50, required=False, label='Найти',
+                             widget=widgets.TextInput(attrs={'class': "form-control w-25"}))

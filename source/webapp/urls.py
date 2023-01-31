@@ -1,5 +1,5 @@
 from django.urls import path
-from webapp.views import IndexViews, ArticleCreateView, ArticleView, MyRedirectView, ArticleUpdateView, \
+from webapp.views import IndexViews, ArticleCreateView, ArticleView, ArticleUpdateView, \
     ArticleDeleteView, ArticleCommentCreateView, CommentUpdateView, CommentDeleteView, TestView
 
 app_name = 'webapp'
@@ -14,5 +14,4 @@ urlpatterns = [
     path('article/<int:pk>/delete', ArticleDeleteView.as_view(), name='article_delete'),
     path('comment/<int:pk>/update', CommentUpdateView.as_view(), name='comment_update'),
     path('comment/<int:pk>/delete', CommentDeleteView.as_view(), name='comment_delete'),
-    path('redirect_view/', MyRedirectView.as_view())
 ]

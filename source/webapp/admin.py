@@ -12,10 +12,8 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display = ['id', 'title', 'created_at']
     list_display_links = ['title']
     search_fields = ['title', 'content']
-    # fields = ['id', 'title', 'author', 'content', 'created_at', 'updated_at']
     exclude = ['tags']
     readonly_fields = ['created_at', 'updated_at']
-    # filter_horizontal = ['tags']
     inlines = (ArticleTagInlines,)
 
 

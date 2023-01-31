@@ -27,7 +27,6 @@ class CommentUpdateView(PermissionRequiredMixin, UpdateView):
     template_name = 'comment/update.html'
     form_class = CommentForm
     context_object_name = 'comment'
-    # permission_required = 'webapp.change_comment'
 
     def has_permission(self):
         return self.request.user.has_perm('webapp.change_comment') or self.get_object().author == self.request.user
