@@ -45,3 +45,51 @@ def article_view(request, *args, **kwargs):
         article = Article.objects.create(**request_data)
         return JsonResponse({'id': article.pk})
     return HttpResponseNotAllowed(['GET'])
+
+
+def add_view(request, *args, **kwargs):
+     my_list = {
+         "A": 1234,
+         "B": 4567
+     }
+     if request.method == "GET":
+        answer = sum(my_list.values())
+        return JsonResponse({'answer': answer}, safe=False)
+     return HttpResponseNotAllowed(['only numbers'])
+
+
+def subtract_view(request, *args, **kwargs):
+    my_list = {
+        "A": 1234,
+        "B": 4567
+    }
+    if request.method == "GET":
+        answer = my_list["A"] - my_list["B"]
+        return JsonResponse({'answer': answer}, safe=False)
+    return HttpResponseNotAllowed(['only numbers'])
+
+
+def multiply_view(request, *args, **kwargs):
+    my_list = {
+        "A": 1234,
+        "B": 4567
+    }
+    if request.method == "GET":
+        answer = my_list["A"] * my_list["B"]
+        return JsonResponse({'answer': answer}, safe=False)
+    return HttpResponseNotAllowed(['only numbers'])
+
+
+def divide_view(request, *args, **kwargs):
+    my_list = {
+        "A": 1234,
+        "B": 4567
+    }
+    if request.method == "GET":
+        answer = my_list["A"] / my_list["B"]
+        return JsonResponse({'answer': answer}, safe=False)
+    return HttpResponseNotAllowed(['only numbers'])
+
+
+
+
